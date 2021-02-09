@@ -1,0 +1,19 @@
+.post-body .pub{
+    grid-template-columns:1fr;
+}
+.post-body .pub .link-grid-container p{
+    line-height:1.7rem;
+}
+.post-body .pub .link-grid-container a{
+    height: auto;
+    width: auto;
+    top: auto;
+    left: auto;
+    position: unset;
+}
+.post-body .pub .link-grid-container .link-grid-image{
+    border-radius: 0;
+}
+.pub-icon{
+    float: right;
+}

@@ -1,0 +1,28 @@
+{
+  "name": "hexo-tag-publications",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"prepack": "postcss css/pub.css > css/pub.min.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/njzjz/hexo-tag-publications.git"
+  },
+  "author": "Jinzhe Zeng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/njzjz/hexo-tag-publications/issues"
+  },
+  "homepage": "https://github.com/njzjz/hexo-tag-publications#readme",
+  "dependencies": {
+    "bibtex-parse": "^2.1.0"
+  },
+  "devDependencies": {
+    "cssnano": "^4.1.10",
+    "postcss": "^8.2.5",
+    "postcss-cli": "^8.3.1"
+  }
+}
