@@ -2,6 +2,7 @@ const bibtexParse = require('bibtex-parse');
 const fs = require('fs');
 const bibtex = fs.readFileSync('source/_data/pub.bib', 'utf8');
 const bibpubs = bibtexParse.entries(bibtex);
+const css = hexo.extend.helper.get('css').bind(hexo);
 const { name, version } = require('./package.json');
 
 var me = hexo.config.pub_author || hexo.config.author;
