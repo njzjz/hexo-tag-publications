@@ -1,11 +1,11 @@
 {
   "name": "hexo-tag-publications",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	"prepack": "postcss css/pub.css > css/pub.min.css"
+    "prepack": "postcss css/pub.css > css/pub.min.css"
   },
   "repository": {
     "type": "git",
