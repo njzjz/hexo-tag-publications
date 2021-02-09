@@ -43,8 +43,8 @@ function get_citation(pub) {
     if (pub.VOLUME) {
         cit.push(`, ${pub.VOLUME}`);
     }
-    if (pub.ISSUE) {
-        cit.push(` (${pub.ISSUE})`);
+    if (pub.NUMBER) {
+        cit.push(` (${pub.NUMBER})`);
     }
     if (pub.PAGES) {
         cit.push(`, ${pub.PAGES}`);
