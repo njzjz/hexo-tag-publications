@@ -17,6 +17,9 @@
 .pub-icon{
     float: right;
 }
+.post-body .pub .link-grid-container{
+    box-shadow: 0.5rem 0.5rem 0.5rem rgb(0 0 0 / 50%);
+}
 .post-body .pub .link-grid-container:hover{
     animation: none;
 }
