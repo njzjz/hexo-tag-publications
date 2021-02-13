@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/njzjz/hexo-tag-publications#readme",
   "dependencies": {
-    "bibtex-parse": "^2.1.0"
+    "bibtex-parse": "^2.1.0",
+    "hexo-tag-injector": "^0.0.1"
   },
   "devDependencies": {
     "cssnano": "4.1.10",

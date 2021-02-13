@@ -4,6 +4,8 @@ const bibtex = fs.readFileSync('source/_data/pub.bib', 'utf8');
 const bibpubs = bibtexParse.entries(bibtex);
 const css = hexo.extend.helper.get('css').bind(hexo);
 const { name, version } = require('./package.json');
+const Injector = require("hexo-tag-injector");
+const injector = new Injector(hexo);
 
 var me = hexo.config.pub_author || hexo.config.author;
 if (typeof (me) == 'string') {
@@ -68,7 +70,7 @@ function get_author(authors) {
 hexo.extend.tag.register('publications', function (args, content) {
     var pubs = get_pubs(content.split(','));
     var html = [];
-    html.push('<pubtag><div class="link-grid pub">');
+    html.push('<div class="link-grid pub">');
     pubs.forEach(function (pub) {
         html.push('<div class="link-grid-container">')
         if (pub.IMAGE) {
@@ -90,17 +92,11 @@ hexo.extend.tag.register('publications', function (args, content) {
         html.push('</span></p>');
         html.push('</div>')
     })
-    html.push('</div></pubtag>');
-    return html.join('');
+    html.push('</div>');
+    return injector.mark(html.join(''));
 }, { ends: true });
 
-hexo.extend.filter.register('after_render:html', function (str, data) {
-    var re = /<pubtag>(([\s\S])*?)<\/pubtag>/g;
-    if (str.match(re)) {
-        // only add scripts for pages that have the tag
-        str = str.replace(re, "$1");
-        // css(cdn_url('css/pub.min.css'))
-        str = str.replace('</head>', css(cdn_url('css/pub.min.css')) + '</head>');
-    }
-    return str;
-});
+injector.register('head_end', css({
+    href: cdn_url('css/pub.min.css'),
+    class: 'pjax',
+}));
