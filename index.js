@@ -1,10 +1,14 @@
 const bibtexParse = require('bibtex-parse');
-const fs = require('fs');
-const bibtex = fs.readFileSync('source/_data/pub.bib', 'utf8');
-const bibpubs = bibtexParse.entries(bibtex);
+const fs = require('hexo-fs');
+const pathFn = require('path');
 const css = hexo.extend.helper.get('css').bind(hexo);
 const { name, version } = require('./package.json');
 const Injector = require("hexo-tag-injector");
+const { npm_url } = require("jsdelivr_url");
+const { htmlTag } = require("hexo-util");
+
+const bibtex = fs.readFileSync(pathFn.join(hexo.source_dir, '_data/pub.bib'));
+const bibpubs = bibtexParse.entries(bibtex);
 const injector = new Injector(hexo);
 
 var me = hexo.config.pub_author || hexo.config.author;
@@ -16,9 +20,15 @@ bibpubs.forEach(pub => {
     keypubs[pub.key] = pub;
 })
 
+const htmlIcon = (cls) => htmlTag("i", { class: cls }, '');
+const htmlLink = (url, text) => htmlTag("a", { href: url }, text, false);
+const htmlNewline = (text) => htmlTag("p", {}, text, false)
+const htmlBold = (text) => htmlTag("b", {}, text);
+
+const doi_prefix = 'https://doi.org/';
 const pub_icons = [
     // {key, prefix, icon}
-    { key: 'DOI', prefix: 'https://doi.org/', icon: 'fas fa-search' },
+    { key: 'DOI', prefix: doi_prefix, icon: 'fas fa-search' },
     { key: 'PDF', prefix: '', icon: 'fas fa-file-pdf' },
     { key: 'RESEARCHGATE', prefix: 'https://www.researchgate.net/publication/', icon: 'fab fa-researchgate' },
     { key: 'GOOGLESCHOLAR', prefix: 'https://scholar.google.com/scholar?cluster=', icon: 'fab fa-google' },
@@ -29,10 +39,6 @@ function get_pubs(keys) {
     return keys.map(key => {
         return keypubs[key];
     })
-}
-
-function cdn_url(path){
-    return `https://cdn.jsdelivr.net/npm/${name}@${version}/${path}`;
 }
 
 function get_citation(pub) {
@@ -61,42 +67,49 @@ function get_author(authors) {
      */
     var new_authors = authors.split(' and ').join(', ');
     me.forEach(mm => {
-        new_authors = new_authors.replace(mm, `<b>${mm}</b>`);
+        new_authors = new_authors.replace(mm, htmlBold(mm));
     })
-    new_authors = new_authors.replace(/\*/g, '<i class="fa fa-envelope fa-fw"></i>');
+    new_authors = new_authors.replace(/\*/g, htmlIcon("fa fa-envelope fa-fw"));
     return new_authors;
 }
 
 hexo.extend.tag.register('publications', function (args, content) {
     var pubs = get_pubs(content.split(','));
-    var html = [];
-    html.push('<div class="link-grid pub">');
-    pubs.forEach(function (pub) {
-        html.push('<div class="link-grid-container">')
-        if (pub.IMAGE) {
-            html.push(`<div class="link-grid-image" style="background-image: url(${pub.IMAGE});"></div>`);
-        }
-        html.push('<p>' + pub.TITLE + '</p>');
-        html.push('<p>');
-        html.push(get_author(pub.AUTHOR))
-        html.push('<br/>' + get_citation(pub));
-        if (pub.DOI) {
-            html.push(`<br/><b>DOI:</b> <a href="https://doi.org/${pub.DOI}">${pub.DOI}</a>`);
-        }
-        html.push('<span class="pub-icon">');
-        pub_icons.forEach(item => {
-            if (pub[item.key]) {
-                html.push(` <a href="${item.prefix}${pub[item.key]}"><i class="${item.icon}"></i></a>`);
-            }
-        });
-        html.push('</span></p>');
-        html.push('</div>')
-    })
-    html.push('</div>');
-    return injector.mark(html.join(''));
+    return injector.mark(htmlTag(
+        "div",
+        { class: "link-grid pub" },
+        pubs.map((pub) => {
+            /** container */
+            return htmlTag(
+                "div",
+                { class: "link-grid-container" },
+                [
+                    pub.IMAGE ? htmlTag(
+                        "div",
+                        { class: "link-grid-image", style: `background-image: url(${pub.IMAGE});` },
+                        "",
+                    ) : '', // image
+                    htmlNewline(pub.TITLE), // first line: title
+                    htmlNewline([// second line
+                        get_author(pub.AUTHOR), // author
+                        get_citation(pub), // citation
+                        htmlBold("DOI: ") + htmlLink(doi_prefix + pub.DOI, pub.DOI), //doi
+                        htmlTag('span', { class: "pub-icon" }, pub_icons.map(item => {
+                            /** icons */
+                            if (pub[item.key]) {
+                                return htmlLink(item.prefix + pub[item.key], htmlIcon(item.icon));
+                            }
+                        }).filter(Boolean).join(' '), false)
+                    ].filter(Boolean).join('<br/>')), // remove empty
+                ].join(''),
+                false,
+            )
+        }).join(''),
+        false,
+    ));
 }, { ends: true });
 
 injector.register('head_end', css({
-    href: cdn_url('css/pub.min.css'),
+    href: npm_url(name, version, 'css/pub.min.css'),
     class: 'pjax',
 }));
