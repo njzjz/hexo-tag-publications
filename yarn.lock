@@ -769,10 +769,10 @@ hexo-fs@^3.1.0:
     graceful-fs "^4.1.11"
     hexo-util "^2.0.0"
 
-hexo-tag-injector@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/hexo-tag-injector/-/hexo-tag-injector-0.0.1.tgz#35a677064ade6cb7917e13ff66280763dedbbd6f"
-  integrity sha512-XlNNvcgNK6V0UKIdk2poumxEPunzsweqf6H5lJE6WJyt2P7V8OlAbntwCYX/3SOPrboKWxLFDJb4isr85IHbxQ==
+hexo-tag-injector@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/hexo-tag-injector/-/hexo-tag-injector-0.0.2.tgz#73f79af8a1625b69b3f579667ee225a5f1940bb7"
+  integrity sha512-8fmPUA+Ufj03rrLmrILEOzrQscDG8/go9TQ/+ak0dcPkx7GqbUOlr6hS6D2ta7ntx5/F84ruDRw34JqTxwvvZA==
 
 hexo-util@^2.0.0, hexo-util@^2.4.0:
   version "2.4.0"
