@@ -31,6 +31,7 @@ const dimensionsBadge = (doi) => htmlTag("span", {
     "data-doi": doi,
     "data-style": "small_rectangle",
     "data-hide-zero-citations": "true",
+    "data-legend": "never",
 }, '')
 const altmetricBadge = (doi) => htmlTag("span", {
     class: "altmetric-embed",
