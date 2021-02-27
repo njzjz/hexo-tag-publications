@@ -23,3 +23,10 @@
 .post-body .pub .link-grid-container:hover{
     animation: none;
 }
+.pub .badge{
+    display: inline-block;
+    vertical-align: middle;
+}
+.pub .badge a{
+    vertical-align: middle;
+}

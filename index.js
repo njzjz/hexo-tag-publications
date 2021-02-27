@@ -1,6 +1,7 @@
 const bibtexParse = require('bibtex-parse');
 const fs = require('hexo-fs');
 const pathFn = require('path');
+const js = hexo.extend.helper.get('js').bind(hexo);
 const css = hexo.extend.helper.get('css').bind(hexo);
 const { name, version } = require('./package.json');
 const Injector = require("hexo-tag-injector");
@@ -9,7 +10,8 @@ const { htmlTag } = require("hexo-util");
 
 const bibtex = fs.readFileSync(pathFn.join(hexo.source_dir, '_data/pub.bib'));
 const bibpubs = bibtexParse.entries(bibtex);
-const injector = new Injector(hexo);
+const injector1 = new Injector(hexo);
+const injector2 = new Injector(hexo);
 
 var me = hexo.config.pub_author || hexo.config.author;
 if (typeof (me) == 'string') {
@@ -24,6 +26,20 @@ const htmlIcon = (cls) => htmlTag("i", { class: cls }, '');
 const htmlLink = (url, text) => htmlTag("a", { href: url }, text, false);
 const htmlNewline = (text) => htmlTag("p", {}, text, false)
 const htmlBold = (text) => htmlTag("b", {}, text);
+const dimensionsBadge = (doi) => htmlTag("span", {
+    class: "__dimensions_badge_embed__",
+    "data-doi": doi,
+    "data-style": "small_rectangle",
+    "data-hide-zero-citations": "true",
+}, '')
+const altmetricBadge = (doi) => htmlTag("span", {
+    class: "altmetric-embed",
+    "data-doi": doi,
+    "data-hide-no-mentions": "true",
+}, '')
+const htmlBadge = (text) => htmlTag("span", {
+    class: "badge",
+}, text, false)
 
 const doi_prefix = 'https://doi.org/';
 const pub_icons = [
@@ -75,7 +91,7 @@ function get_author(authors) {
 
 hexo.extend.tag.register('publications', function (args, content) {
     var pubs = get_pubs(content.split(','));
-    return injector.mark(htmlTag(
+    return injector1.mark(injector2.mark(htmlTag(
         "div",
         { class: "link-grid pub" },
         pubs.map((pub) => {
@@ -94,6 +110,7 @@ hexo.extend.tag.register('publications', function (args, content) {
                         get_author(pub.AUTHOR), // author
                         get_citation(pub), // citation
                         htmlBold("DOI: ") + htmlLink(doi_prefix + pub.DOI, pub.DOI), //doi
+                        [dimensionsBadge(pub.DOI), altmetricBadge(pub.DOI)].map(htmlBadge).join(" ") + // badges
                         htmlTag('span', { class: "pub-icon" }, pub_icons.map(item => {
                             /** icons */
                             if (pub[item.key]) {
@@ -106,10 +123,20 @@ hexo.extend.tag.register('publications', function (args, content) {
             )
         }).join(''),
         false,
-    ));
+    )));
 }, { ends: true });
 
-injector.register('head_end', css({
+injector1.register('head_end', css({
     href: npm_url(name, version, 'css/pub.min.css'),
+    class: 'pjax',
+}));
+
+injector2.register('body_end', js({
+    src: "https://badge.dimensions.ai/badge.js",
+    async: true,
+    class: 'pjax',
+}) + js({
+    src: "https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js",
+    async: true,
     class: 'pjax',
 }));
