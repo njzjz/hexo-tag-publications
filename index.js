@@ -111,13 +111,13 @@ hexo.extend.tag.register('publications', function (args, content) {
                         get_author(pub.AUTHOR), // author
                         get_citation(pub), // citation
                         htmlBold("DOI: ") + htmlLink(doi_prefix + pub.DOI, pub.DOI), //doi
-                        [dimensionsBadge(pub.DOI), altmetricBadge(pub.DOI)].map(htmlBadge).join(" ") + // badges
+                        [dimensionsBadge(pub.DOI), altmetricBadge(pub.DOI)].map(htmlBadge).join("") + // badges
                         htmlTag('span', { class: "pub-icon" }, pub_icons.map(item => {
                             /** icons */
                             if (pub[item.key]) {
                                 return htmlLink(item.prefix + pub[item.key], htmlIcon(item.icon));
                             }
-                        }).filter(Boolean).join(' '), false)
+                        }).filter(Boolean).join(''), false)
                     ].filter(Boolean).join('<br/>')), // remove empty
                 ].join(''),
                 false,
