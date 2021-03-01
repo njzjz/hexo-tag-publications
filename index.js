@@ -10,8 +10,8 @@ const { htmlTag } = require("hexo-util");
 
 const bibtex = fs.readFileSync(pathFn.join(hexo.source_dir, '_data/pub.bib'));
 const bibpubs = bibtexParse.entries(bibtex);
-const injector1 = new Injector(hexo);
-const injector2 = new Injector(hexo);
+const injector1 = new Injector(hexo, id = name + "css");
+const injector2 = new Injector(hexo, id = name + "js");
 
 var me = hexo.config.pub_author || hexo.config.author;
 if (typeof (me) == 'string') {
