@@ -1,11 +1,11 @@
 {
   "name": "hexo-tag-publications",
-  "version": "0.1.3",
+  "version": "0.1.4-beta.2",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepack": "postcss css/pub.css > css/pub.min.css"
+    "prepack": "postcss css/pub.css > css/pub.min.css && webpack --mode=production --progress"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,8 @@
   "devDependencies": {
     "cssnano": "4.1.10",
     "postcss": "8.2.6",
-    "postcss-cli": "8.3.1"
+    "postcss-cli": "8.3.1",
+    "webpack": "^5.24.3",
+    "webpack-cli": "^4.5.0"
   }
 }

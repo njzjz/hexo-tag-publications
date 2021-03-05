@@ -14,10 +14,11 @@
 .post-body .pub .link-grid-container .link-grid-image{
     border-radius: 0;
 }
-.pub-icon{
+.pub-icons{
     float: right;
 }
-.pub-icon i{
+.pub-icons .pub-icon:not(:first-of-type){
+    /* do not add margin for the first icon */
     margin-left: 3px;
 }
 .post-body .pub .link-grid-container{
@@ -26,11 +27,14 @@
 .post-body .pub .link-grid-container:hover{
     animation: none;
 }
-.pub .badge{
-    display: inline-block;
-    height: 20px;
-    margin-right: 3px;
+.pub .pub-badges .badge .pub-count{
+    font-weight: 700;
 }
-.pub .badge, .pub .badge a{
-    vertical-align: top;
+.pub .pub-badges .badge .pub-count .pub-count-label{
+    font-weight: 400;
+}
+.pub .pub-badges .badge:not(:empty):not(:last-of-type)::after{
+    content: "|";
+    margin-left: 3px;
+    margin-right: 3px;
 }

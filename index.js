@@ -26,21 +26,10 @@ const htmlIcon = (cls) => htmlTag("i", { class: cls }, '');
 const htmlLink = (url, text) => htmlTag("a", { href: url }, text, false);
 const htmlNewline = (text) => htmlTag("p", {}, text, false)
 const htmlBold = (text) => htmlTag("b", {}, text);
-const dimensionsBadge = (doi) => htmlTag("span", {
-    class: "__dimensions_badge_embed__",
+const htmlBadge = (cls, doi) => htmlTag("span", {
+    class: `badge ${cls}`,
     "data-doi": doi,
-    "data-style": "small_rectangle",
-    "data-hide-zero-citations": "true",
-    "data-legend": "never",
-}, '')
-const altmetricBadge = (doi) => htmlTag("span", {
-    class: "altmetric-embed",
-    "data-doi": doi,
-    "data-hide-no-mentions": "true",
-}, '')
-const htmlBadge = (text) => htmlTag("span", {
-    class: "badge",
-}, text, false)
+}, '', false)
 
 const doi_prefix = 'https://doi.org/';
 const pub_icons = [
@@ -111,11 +100,15 @@ hexo.extend.tag.register('publications', function (args, content) {
                         get_author(pub.AUTHOR), // author
                         get_citation(pub), // citation
                         htmlBold("DOI: ") + htmlLink(doi_prefix + pub.DOI, pub.DOI), //doi
-                        [dimensionsBadge(pub.DOI), altmetricBadge(pub.DOI)].map(htmlBadge).join("") + // badges
-                        htmlTag('span', { class: "pub-icon" }, pub_icons.map(item => {
+                        htmlTag('span', { class: "pub-badges" },
+                            [htmlBadge("pub_dimesions_conut", pub.DOI), htmlBadge("pub_altmetric_conut", pub.DOI)].join(""),
+                            false) + // badges
+                        htmlTag('span', { class: "pub-icons" }, pub_icons.map(item => {
                             /** icons */
                             if (pub[item.key]) {
-                                return htmlLink(item.prefix + pub[item.key], htmlIcon(item.icon));
+                                return htmlTag('span', { class: "pub-icon" },
+                                    htmlLink(item.prefix + pub[item.key], htmlIcon(item.icon)),
+                                    false);
                             }
                         }).filter(Boolean).join(''), false)
                     ].filter(Boolean).join('<br/>')), // remove empty
@@ -133,11 +126,7 @@ injector1.register('head_end', css({
 }));
 
 injector2.register('body_end', js({
-    src: "https://badge.dimensions.ai/badge.js",
-    async: true,
-    class: 'pjax',
-}) + js({
-    src: "https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js",
+    src: npm_url(name, version, "js/count.min.js"),
     async: true,
     class: 'pjax',
 }));
