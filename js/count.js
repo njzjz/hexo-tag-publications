@@ -1,7 +1,7 @@
 (() => {
     const $$ = (className) => document.querySelectorAll(className);
     const htmlTag = (number, label, url) => {
-        return `<span class="pub-count"><a href="${url}">${number}</a> <span class="pub-count-label">${label}</span></span>`;
+        return `<span class="pub-count"><a href="${url}" target="_blank">${number}</a> <span class="pub-count-label">${label}</span></span>`;
     };
 
     const dimesions_count = (element, doi) => {
