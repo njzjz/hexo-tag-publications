@@ -33,7 +33,7 @@
 .pub .pub-badges .badge .pub-count .pub-count-label{
     font-weight: 400;
 }
-.pub .pub-badges .badge::not(:first-child):not(:empty)::before{
+.pub .pub-badges .badge:not(:first-child):not(:empty)::before{
     /* See https://stackoverflow.com/a/34969812/9567349 */
     content: "|";
     margin-left: 3px;
