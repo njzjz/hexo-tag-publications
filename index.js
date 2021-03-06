@@ -123,7 +123,8 @@ hexo.extend.tag.register('publications', function (args, content) {
 injector1.register('head_end', css({
     href: npm_url(name, version, 'css/pub.min.css'),
     class: 'pjax',
-}));
+}) + htmlTag("link", { rel: "dns-prefetch", href: "https://metrics-api.dimensions.ai/" }) +
+    htmlTag("link", { rel: "dns-prefetch", href: "https://api.altmetric.com/" }));
 
 injector2.register('body_end', js({
     src: npm_url(name, version, "js/count.min.js"),
