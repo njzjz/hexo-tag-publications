@@ -12,6 +12,7 @@
          * API: https://metrics-api.dimensions.ai/doi/10.1038/s41467-020-19497-z
          * Details: https://badge.dimensions.ai/details/doi/10.1038/s41467-020-19497-z
          */
+        if (!doi) return;
         const url = "https://metrics-api.dimensions.ai/doi/" + doi;
         const badge_url = "https://badge.dimensions.ai/details/doi/" + doi;
         fetch(url).catch((err) => Promise.reject(err)).then(data => data.json()).then(jdata => {
@@ -24,6 +25,7 @@
 
     const altmetric_count = (element, doi) => {
         /** https://api.altmetric.com/ */
+        if (!doi) return;
         const url = "https://api.altmetric.com/v1/doi/" + doi;
         fetch(url).catch((err) => Promise.reject(err)).then(data => data.json()).then(jdata => {
             const { score, details_url } = jdata;
