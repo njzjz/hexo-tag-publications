@@ -62,7 +62,7 @@ function get_citation(pub) {
     }
     if (pub.PAGES) {
         // replace -- to –
-        var pages = pub.PAGES.replace("--", "–");
+        var pages = pub.PAGES.toString().replace("--", "–");
         cit.push(`, ${pages}`);
     }
     cit.push('.')
