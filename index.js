@@ -61,7 +61,9 @@ function get_citation(pub) {
         cit.push(` (${pub.NUMBER})`);
     }
     if (pub.PAGES) {
-        cit.push(`, ${pub.PAGES}`);
+        // replace -- to –
+        var pages = pub.PAGES.replace("--", "–");
+        cit.push(`, ${pages}`);
     }
     cit.push('.')
     return cit.join('');
@@ -71,12 +73,25 @@ function get_author(authors) {
     /**
      * **Jinzhe Zeng**, Tong Zhu[email];
      */
-    var new_authors = authors.split(' and ').join(', ');
-    me.forEach(mm => {
-        new_authors = new_authors.replace(mm, htmlBold(mm));
-    })
-    new_authors = new_authors.replace(/\*/g, htmlIcon("fa fa-envelope fa-fw"));
-    return new_authors;
+    return authors.split(' and ').map(author => {
+        author = author.trim()
+        // Corresponding author
+        corresponding_author = author.indexOf("*") > -1
+        if (corresponding_author) {
+            author = author.replace("*", "");
+        }
+        // FIRST, LAST => LAST FIRST
+        if (author.indexOf(",") > -1) {
+            author = author.split(",").map(a => a.trim()).reverse().join(" ");
+        }
+        // it's you?
+        if (me.map(mm => mm == author).some(Boolean)) {
+            author = htmlBold(author);
+        }
+        if (corresponding_author) {
+            author += htmlIcon("fa fa-envelope fa-fw");
+        }
+    }).join(', ');
 }
 
 hexo.extend.tag.register('publications', function (args, content) {
