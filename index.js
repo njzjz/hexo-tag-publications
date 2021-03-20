@@ -91,11 +91,12 @@ function get_author(authors) {
         if (corresponding_author) {
             author += htmlIcon("fa fa-envelope fa-fw");
         }
+        return author;
     }).join(', ');
 }
 
 hexo.extend.tag.register('publications', function (args, content) {
-    var pubs = get_pubs(content.split(','));
+    var pubs = get_pubs(content.split(',').map(pub => pub.trim()));
     return injector1.mark(injector2.mark(htmlTag(
         "div",
         { class: "link-grid pub" },
