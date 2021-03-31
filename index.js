@@ -13,12 +13,26 @@ const bibpubs = bibtexParse.entries(bibtex);
 const injector1 = new Injector(hexo, id = name + "css");
 const injector2 = new Injector(hexo, id = name + "js");
 
+function get_image(doi) {
+    /** get image from DOI */
+    if (!doi) return null;
+    const doi_s = doi.split("/");
+    switch (doi_s[0]) {
+        case '10.1039':
+            // RCS
+            return `https://pubs.rsc.org/en/Image/Get?imageInfo.ImageIdentifier.ManuscriptID=${doi_s[1]}`;
+        default:
+            return null;
+    }
+}
+
 var me = hexo.config.pub_author || hexo.config.author;
 if (typeof (me) == 'string') {
     me = [me];
 }
 var keypubs = {};
 bibpubs.forEach(pub => {
+    if (!pub.IMAGE) pub.IMAGE = get_image(pub.DOI);
     keypubs[pub.key] = pub;
 })
 
@@ -115,7 +129,7 @@ hexo.extend.tag.register('publications', function (args, content) {
                     htmlNewline([// second line
                         get_author(pub.AUTHOR), // author
                         get_citation(pub), // citation
-                        htmlBold("DOI: ") + htmlLink(doi_prefix + pub.DOI, pub.DOI), //doi
+                        pub.DOI ? htmlBold("DOI: ") + htmlLink(doi_prefix + pub.DOI, pub.DOI) : null, //doi
                         htmlTag('span', { class: "pub-badges" },
                             [htmlBadge("pub_dimesions_conut", pub.DOI), htmlBadge("pub_altmetric_conut", pub.DOI)].join(""),
                             false) + // badges
