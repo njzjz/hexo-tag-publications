@@ -34,7 +34,7 @@
                 element.innerHTML += htmlTag(round_score, "Altmetric", details_url);
             }
             if (readers_count > 0) {
-                element.innerHTML += htmlTag(readers_count, "Mendeley Readers", details_url);
+                element.innerHTML += htmlTag(readers_count, "Mendeley", details_url);
             }
         });
     };

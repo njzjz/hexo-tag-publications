@@ -30,7 +30,7 @@
 .pub .pub-badges .badge .pub-count{
     font-weight: 700;
 }
-.pub .pub-badges .badge .pub-count .pub-count-label{
+.pub .pub-badges .badge .pub-count .pub-count-label, .pub .pub-badges .badge-split::before{
     font-weight: 400;
 }
 .pub .pub-badges .badge-split:not(:first-child):not(:empty)::before{
