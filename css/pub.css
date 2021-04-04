@@ -33,18 +33,18 @@
 .pub .pub-badges .badge .pub-count .pub-count-label{
     font-weight: 400;
 }
-.pub .pub-badges .badge:not(:first-child):not(:empty)::before{
+.pub .pub-badges .badge-split:not(:first-child):not(:empty)::before{
     /* See https://stackoverflow.com/a/34969812/9567349 */
     content: "|";
     margin-left: 3px;
     margin-right: 3px;
 }
-.pub .pub-badges .badge:empty + .badge:not(:empty)::before {
+.pub .pub-badges .badge-split:empty + .badge-split:not(:empty)::before {
     content:'';
     margin-left: 0;
     margin-right: 0;
 }
-.pub .pub-badges .badge:not(:empty) ~ .badge:empty + .badge:not(:empty)::before {
+.pub .pub-badges .badge-split:not(:empty) ~ .badge-split:empty + .badge-split:not(:empty)::before {
     content: "|";
     margin-left: 3px;
     margin-right: 3px;

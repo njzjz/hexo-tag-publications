@@ -1,7 +1,7 @@
 (() => {
     const $$ = (className) => document.querySelectorAll(className);
     const htmlTag = (number, label, url) => {
-        return `<span class="pub-count"><a href="${url}" target="_blank">${number}</a> <span class="pub-count-label">${label}</span></span>`;
+        return `<span class="pub-count badge-split"><a href="${url}" target="_blank">${number}</a> <span class="pub-count-label">${label}</span></span>`;
     };
 
     const dimesions_count = (element, doi) => {
@@ -28,10 +28,13 @@
         if (!doi) return;
         const url = "https://api.altmetric.com/v1/doi/" + doi;
         fetch(url).catch((err) => Promise.reject(err)).then(data => data.json()).then(jdata => {
-            const { score, details_url } = jdata;
+            const { score, details_url, readers_count } = jdata;
             const round_score = Math.ceil(score);
             if (round_score > 0) {
-                element.innerHTML = htmlTag(round_score, "Altmetric", details_url);
+                element.innerHTML += htmlTag(round_score, "Altmetric", details_url);
+            }
+            if (readers_count > 0) {
+                element.innerHTML += htmlTag(readers_count, "Mendeley Readers", details_url);
             }
         });
     };
