@@ -25,7 +25,7 @@
     "jsdelivr_url": "^0.0.1"
   },
   "devDependencies": {
-    "cssnano": "4.1.11",
+    "cssnano": "5.0.2",
     "postcss": "8.2.12",
     "postcss-cli": "8.3.1",
     "webpack": "5.35.1",
