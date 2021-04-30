@@ -1,4 +1,6 @@
 const bibtexParse = require('bibtex-parse');
+const fs = require('hexo-fs');
+const pathFn = require('path');
 const js = hexo.extend.helper.get('js').bind(hexo);
 const css = hexo.extend.helper.get('css').bind(hexo);
 const { name, version } = require('./package.json');
@@ -6,7 +8,7 @@ const Injector = require("hexo-tag-injector");
 const { npm_url } = require("jsdelivr_url");
 const { htmlTag } = require("hexo-util");
 
-const bibtex = hexo.site.data.pub;
+const bibtex = fs.readFileSync(pathFn.join(hexo.source_dir, '_data/pub.bib'));
 const bibpubs = bibtexParse.entries(bibtex);
 const injector1 = new Injector(hexo, id = name + "css");
 const injector2 = new Injector(hexo, id = name + "js");
@@ -119,8 +121,8 @@ hexo.extend.tag.register('publications', function (args, content) {
                 { class: "link-grid-container" },
                 [
                     pub.IMAGE ? htmlTag(
-                        "object",
-                        { class: "link-grid-image", data: pub.IMAGE },
+                        "div",
+                        { class: "link-grid-image", style: `background-image: url(${pub.IMAGE});` },
                         "",
                     ) : '', // image
                     htmlNewline(pub.TITLE), // first line: title
