@@ -39,12 +39,27 @@
         });
     };
 
+    const lazyload = (element, func) => {
+        const callback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.intersectionRatio > 0) {
+                    const target = entry.target;
+                    func(target, target.dataset.doi);
+                }
+            });
+          };
+        let observer = new IntersectionObserver(callback, {
+            rootMargin: '10px',
+        });
+        observer.observe(element);
+    }
+
     const show_number = () => {
         $$(".pub_dimesions_conut").forEach(element => {
-            dimesions_count(element, element.dataset.doi);
+            lazyload(element, dimesions_count);
         });
         $$(".pub_altmetric_conut").forEach(element => {
-            altmetric_count(element, element.dataset.doi);
+            lazyload(element, altmetric_count);
         });
     };
     show_number();
