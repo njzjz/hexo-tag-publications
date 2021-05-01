@@ -45,6 +45,7 @@
                 if (entry.intersectionRatio > 0) {
                     const target = entry.target;
                     func(target, target.dataset.doi);
+                    observer.unobserve(target);
                 }
             });
           };
