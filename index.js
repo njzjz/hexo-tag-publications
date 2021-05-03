@@ -121,8 +121,8 @@ hexo.extend.tag.register('publications', function (args, content) {
                 { class: "link-grid-container" },
                 [
                     pub.IMAGE ? htmlTag(
-                        "object",
-                        { class: "link-grid-image", data: pub.IMAGE },
+                        "img",
+                        { class: "link-grid-image", src: pub.IMAGE },
                         "",
                     ) : '', // image
                     htmlNewline(pub.TITLE), // first line: title
