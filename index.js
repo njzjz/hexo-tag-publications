@@ -67,7 +67,7 @@ function get_citation(pub) {
     * journal, year, volume (issue), page.
     */
     cit = [];
-    cit.push(`${pub.JOURNAL}, ${pub.YEAR}`);
+    cit.push(`${pub.JOURNAL || pub.JOURNALTITLE}, ${pub.YEAR || pub.date.slice(0,4) }`);
     if (pub.VOLUME) {
         cit.push(`, ${pub.VOLUME}`);
     }
@@ -110,7 +110,7 @@ function get_author(authors) {
 }
 
 hexo.extend.tag.register('publications', function (args, content) {
-    var pubs = get_pubs(content.split(',').map(pub => pub.trim()));
+    const pubs = get_pubs(content.split(',').map(pub => pub.trim()).filter(Boolean));
     return injector1.mark(injector2.mark(htmlTag(
         "div",
         { class: "link-grid pub" },
