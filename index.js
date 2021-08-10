@@ -99,7 +99,7 @@ function get_author(authors) {
     /**
      * **Jinzhe Zeng**, Tong Zhu[email];
      */
-    return authors.split(' and ').map(author => {
+    return authors && authors.split(' and ').map(author => {
         author = author.trim()
         // Corresponding author
         corresponding_author = author.indexOf("*") > -1
@@ -128,7 +128,7 @@ hexo.extend.tag.register('publications', function (args, content) {
         { class: "link-grid pub" },
         pubs.map((pub) => {
             /** container */
-            return htmlTag(
+            return pub ? htmlTag(
                 "div",
                 { class: "link-grid-container" },
                 [
@@ -156,7 +156,7 @@ hexo.extend.tag.register('publications', function (args, content) {
                     ].filter(Boolean).join('<br/>')), // remove empty
                 ].join(''),
                 false,
-            )
+            ) : ''
         }).join(''),
         false,
     )));
