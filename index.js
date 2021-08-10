@@ -67,7 +67,7 @@ function get_citation(pub) {
     * journal, year, volume (issue), page.
     */
     cit = [];
-    cit.push(`${pub.JOURNAL || pub.JOURNALTITLE}, ${pub.YEAR || (pub.date && pub.date.slice(0,4)) }`);
+    cit.push(`${pub.JOURNAL || pub.JOURNALTITLE}, ${pub.YEAR || (pub.DATE && pub.DATE.slice(0,4)) }`);
     if (pub.VOLUME) {
         cit.push(`, ${pub.VOLUME}`);
     }
