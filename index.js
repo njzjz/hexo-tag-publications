@@ -21,6 +21,17 @@ function get_image(doi) {
         case '10.1039':
             // RCS
             return `https://pubs.rsc.org/en/Image/Get?imageInfo.ImageIdentifier.ManuscriptID=${doi_s[1]}`;
+        case '10.1103':
+            // APS
+            return `https://journals.aps.org/prx/article/${doi}/figures/1/thumbnail`;
+        case '10.1038':
+            // Nature
+            // new style: s41467-020-19497-z
+            nature_idxs = doi_s[1].split("-");
+            if (nature_idxs.length == 4 && parseInt(nature_idxs[1]) >= 18) {
+                return `https://media.springernature.com/lw200/springer-static/image/art%3A10.1038%2F${doi_s[1]}/MediaObjects/${nature_idxs[0].slice(1)}_2${nature_idxs[1]}_${nature_idxs[2]}_Fig1_HTML.png`;
+            }
+            return null
         default:
             return null;
     }
@@ -31,10 +42,15 @@ if (typeof (me) == 'string') {
     me = [me];
 }
 var keypubs = {};
-bibpubs.forEach(pub => {
-    if (!pub.IMAGE) pub.IMAGE = get_image(pub.DOI);
-    keypubs[pub.key] = pub;
-})
+
+const add_images = (bibpubs_list) => {
+    bibpubs_list.forEach(pub => {
+        if (!pub.IMAGE) pub.IMAGE = get_image(pub.DOI);
+        keypubs[pub.key] = pub;
+    });
+}
+
+add_images(bibpubs);
 
 const htmlIcon = (cls) => htmlTag("i", { class: cls }, '');
 const htmlLink = (url, text) => htmlTag("a", { href: url }, text, false);
@@ -71,7 +87,7 @@ function get_citation(pub) {
     if (journal) {
         cit.push(journal);
     }
-    const year = pub.YEAR || (pub.DATE && pub.DATE.slice(0,4));
+    const year = pub.YEAR || (pub.DATE && pub.DATE.slice(0, 4));
     if (year) {
         if (journal) {
             cit.push(`, `);
@@ -168,6 +184,7 @@ hexo.extend.tag.register('publications_from_bib', function (args, content) {
     const bibfn = args[0];
     const bibtex_local = fs.readFileSync(pathFn.join(hexo.source_dir, '_data', bibfn));
     const bibpubs_local = bibtexParse.entries(bibtex_local);
+    add_images(bibpubs_local);
     const pubs = Object.values(bibpubs_local);
     return pubs2html(pubs);
 }, { ends: false });
