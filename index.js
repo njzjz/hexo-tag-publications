@@ -29,7 +29,7 @@ function get_image(doi) {
             // new style: s41467-020-19497-z
             nature_idxs = doi_s[1].split("-");
             if (nature_idxs.length == 4 && parseInt(nature_idxs[1]) >= 18) {
-                return `https://media.springernature.com/lw200/springer-static/image/art%3A10.1038%2F${doi_s[1]}/MediaObjects/${nature_idxs[0].slice(1)}_2${nature_idxs[1]}_${nature_idxs[2]}_Fig1_HTML.png`;
+                return `https://media.springernature.com/lw200/springer-static/image/art%3A10.1038%2F${doi_s[1]}/MediaObjects/${nature_idxs[0].slice(1)}_2${nature_idxs[1]}_${parseInt(nature_idxs[2])}_Fig1_HTML.png`;
             }
             return null
         default:
