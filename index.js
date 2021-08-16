@@ -121,46 +121,56 @@ function get_author(authors) {
     }).join(', ');
 }
 
+const pubs2html = (pubs) => injector1.mark(injector2.mark(htmlTag(
+    "div",
+    { class: "link-grid pub" },
+    pubs.map((pub) => {
+        /** container */
+        return pub ? htmlTag(
+            "div",
+            { class: "link-grid-container" },
+            [
+                pub.IMAGE ? htmlTag(
+                    "img",
+                    { class: "link-grid-image", src: pub.IMAGE },
+                    "",
+                ) : '', // image
+                htmlNewline(pub.TITLE), // first line: title
+                htmlNewline([// second line
+                    get_author(pub.AUTHOR), // author
+                    get_citation(pub), // citation
+                    pub.DOI ? htmlBold("DOI: ") + htmlLink(doi_prefix + pub.DOI, pub.DOI) : null, //doi
+                    htmlTag('span', { class: "pub-badges" },
+                        [htmlBadge("pub_dimesions_conut", pub.DOI), htmlBadge("pub_altmetric_conut", pub.DOI)].join(""),
+                        false) + // badges
+                    htmlTag('span', { class: "pub-icons" }, pub_icons.map(item => {
+                        /** icons */
+                        if (pub[item.key]) {
+                            return htmlTag('span', { class: "pub-icon" },
+                                htmlLink(item.prefix + pub[item.key], htmlIcon(item.icon)),
+                                false);
+                        }
+                    }).filter(Boolean).join(''), false)
+                ].filter(Boolean).join('<br/>')), // remove empty
+            ].join(''),
+            false,
+        ) : ''
+    }).join(''),
+    false,
+)));
+
 hexo.extend.tag.register('publications', function (args, content) {
     const pubs = get_pubs(content.split(',').map(pub => pub.trim()).filter(Boolean));
-    return injector1.mark(injector2.mark(htmlTag(
-        "div",
-        { class: "link-grid pub" },
-        pubs.map((pub) => {
-            /** container */
-            return pub ? htmlTag(
-                "div",
-                { class: "link-grid-container" },
-                [
-                    pub.IMAGE ? htmlTag(
-                        "img",
-                        { class: "link-grid-image", src: pub.IMAGE },
-                        "",
-                    ) : '', // image
-                    htmlNewline(pub.TITLE), // first line: title
-                    htmlNewline([// second line
-                        get_author(pub.AUTHOR), // author
-                        get_citation(pub), // citation
-                        pub.DOI ? htmlBold("DOI: ") + htmlLink(doi_prefix + pub.DOI, pub.DOI) : null, //doi
-                        htmlTag('span', { class: "pub-badges" },
-                            [htmlBadge("pub_dimesions_conut", pub.DOI), htmlBadge("pub_altmetric_conut", pub.DOI)].join(""),
-                            false) + // badges
-                        htmlTag('span', { class: "pub-icons" }, pub_icons.map(item => {
-                            /** icons */
-                            if (pub[item.key]) {
-                                return htmlTag('span', { class: "pub-icon" },
-                                    htmlLink(item.prefix + pub[item.key], htmlIcon(item.icon)),
-                                    false);
-                            }
-                        }).filter(Boolean).join(''), false)
-                    ].filter(Boolean).join('<br/>')), // remove empty
-                ].join(''),
-                false,
-            ) : ''
-        }).join(''),
-        false,
-    )));
+    return pubs2html(pubs);
 }, { ends: true });
+
+hexo.extend.tag.register('publications_from_bib', function (args, content) {
+    const bibfn = args[0];
+    const bibtex_local = fs.readFileSync(pathFn.join(hexo.source_dir, '_data', bibfn));
+    const bibpubs_local = bibtexParse.entries(bibtex_local);
+    const pubs = Object.values(bibpubs_local);
+    return pubs2html(pubs);
+}, { ends: false });
 
 injector1.register('head_end', css({
     href: npm_url(name, version, 'css/pub.min.css'),
