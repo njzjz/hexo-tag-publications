@@ -16,9 +16,8 @@
     padding: 0;
 }
 
-.pub .pub-container:active {
-    box-shadow: .5rem .5rem .25rem rgba(0, 0, 0, .5);
-    transform: translate(.2rem, .2rem);
+.pub .pub-container:hover {
+    background: var(--card-bg-color);
 }
 
 .pub .pub-container .pub-image {
@@ -69,7 +68,7 @@
 }
 
 .pub .pub-container {
-    box-shadow: 0.5rem 0.5rem 0.5rem rgb(0 0 0 / 50%);
+    box-shadow: none;
 }
 
 .pub .pub-container:hover {
