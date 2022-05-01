@@ -2,7 +2,9 @@
 
 [![jsdelivr](https://data.jsdelivr.com/v1/package/npm/hexo-tag-publications/badge/all)](https://www.jsdelivr.com/package/npm/hexo-tag-publications)
 
-`hexo-tag-publications` creates a publication list for [Hexo Next theme](https://github.com/next-theme/hexo-theme-next). See [Here](https://njzjz.win/cv/) for an example.
+`hexo-tag-publications` creates a publication list. See [Here](https://njzjz.win/cv/) for an example.
+
+`hexo-tag-publications` needs Font Awesome to show icons.
 
 ## Installation
 

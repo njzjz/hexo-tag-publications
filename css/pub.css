@@ -1,50 +1,104 @@
-.post-body .pub{
-    grid-template-columns:1fr;
+.pub {
+    display: grid;
+    grid-gap: 1.5rem;
+    gap: 1.5rem;
+    margin-bottom: 20px;
+    padding: 0;
+    grid-template-columns: 1fr;
 }
-.post-body .pub .link-grid-container p{
-    line-height:1.7rem;
+
+.pub .pub-container {
+    min-height: 5rem;
+    min-width: 0;
+    position: relative;
+    border: none;
+    box-shadow: none;
+    padding: 0;
 }
-.post-body .pub .link-grid-container a{
+
+.pub .pub-container:active {
+    box-shadow: .5rem .5rem .25rem rgba(0, 0, 0, .5);
+    transform: translate(.2rem, .2rem);
+}
+
+.pub .pub-container .pub-image {
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    height: 5rem;
+    padding: 3px;
+    width: 5rem;
+    border-radius: 0;
+    float: right;
+    margin-left: 1rem;
+    position: unset;
+}
+
+.pub .pub-container p {
+    line-height: 1.7rem;
+    /* margin-left is 0 */
+    margin: 0 1rem 0 0;
+}
+
+.pub .pub-container p:first-of-type {
+    font-size: 1.2em;
+    text-align: left;
+}
+
+.pub .pub-container p:last-of-type {
+    font-size: .8em;
+    line-height: 1.3rem;
+    opacity: .7;
+}
+
+.pub .pub-container a {
+    border: 0;
     height: auto;
     width: auto;
     top: auto;
     left: auto;
     position: unset;
 }
-.post-body .pub .link-grid-container .link-grid-image{
-    border-radius: 0;
-}
-.pub-icons{
+
+.pub-icons {
     float: right;
 }
-.pub-icons .pub-icon:not(:first-of-type){
+
+.pub-icons .pub-icon:not(:first-of-type) {
     /* do not add margin for the first icon */
     margin-left: 3px;
 }
-.post-body .pub .link-grid-container{
+
+.pub .pub-container {
     box-shadow: 0.5rem 0.5rem 0.5rem rgb(0 0 0 / 50%);
 }
-.post-body .pub .link-grid-container:hover{
+
+.pub .pub-container:hover {
     animation: none;
 }
-.pub .pub-badges .badge .pub-count{
+
+.pub .pub-badges .badge .pub-count {
     font-weight: 700;
 }
-.pub .pub-badges .badge .pub-count .pub-count-label, .pub .pub-badges .badge-split::before{
+
+.pub .pub-badges .badge .pub-count .pub-count-label,
+.pub .pub-badges .badge-split::before {
     font-weight: 400;
 }
-.pub .pub-badges .badge-split:not(:first-child):not(:empty)::before{
+
+.pub .pub-badges .badge-split:not(:first-child):not(:empty)::before {
     /* See https://stackoverflow.com/a/34969812/9567349 */
     content: "|";
     margin-left: 3px;
     margin-right: 3px;
 }
-.pub .pub-badges .badge-split:empty + .badge-split:not(:empty)::before {
-    content:'';
+
+.pub .pub-badges .badge-split:empty+.badge-split:not(:empty)::before {
+    content: '';
     margin-left: 0;
     margin-right: 0;
 }
-.pub .pub-badges .badge-split:not(:empty) ~ .badge-split:empty + .badge-split:not(:empty)::before {
+
+.pub .pub-badges .badge-split:not(:empty)~.badge-split:empty+.badge-split:not(:empty)::before {
     content: "|";
     margin-left: 3px;
     margin-right: 3px;

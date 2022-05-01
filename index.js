@@ -139,16 +139,16 @@ function get_author(authors) {
 
 const pubs2html = (pubs) => injector1.mark(injector2.mark(htmlTag(
     "div",
-    { class: "link-grid pub" },
+    { class: "pub" },
     pubs.map((pub) => {
         /** container */
         return pub ? htmlTag(
             "div",
-            { class: "link-grid-container" },
+            { class: "pub-container" },
             [
                 pub.IMAGE ? htmlTag(
                     "img",
-                    { class: "link-grid-image", src: pub.IMAGE },
+                    { class: "pub-image", src: pub.IMAGE },
                     "",
                 ) : '', // image
                 htmlNewline(pub.TITLE), // first line: title
