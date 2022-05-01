@@ -30,6 +30,7 @@
     float: right;
     margin-left: 1rem;
     position: unset;
+    margin-bottom: 5px;
 }
 
 .pub .pub-container p {
