@@ -896,11 +896,6 @@ jest-worker@^27.4.5:
     merge-stream "^2.0.0"
     supports-color "^8.0.0"
 
-jsdelivr_url@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/jsdelivr_url/-/jsdelivr_url-0.0.1.tgz#3a9c0440575ec092d88b403091b8b68d2c0df755"
-  integrity sha512-HjjyhWU8kG1Q1JsFf6D7wNF0REqUA8CMiBHHl0w5RW5uLVgdLK5UxzW5rwmorP8vxLNiNo3rjr+E4cpFb5gI/g==
-
 json-parse-even-better-errors@^2.3.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/json-parse-even-better-errors/-/json-parse-even-better-errors-2.3.1.tgz#7c47805a94319928e05777405dc12e1f7a4ee02d"
@@ -1666,6 +1661,11 @@ universalify@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/universalify/-/universalify-2.0.0.tgz#75a4984efedc4b08975c5aeb73f530d02df25717"
   integrity sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==
+
+unpkg_url@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/unpkg_url/-/unpkg_url-0.0.1.tgz#24ee5c07ee3651bad7bad62ad14470cc50b05a77"
+  integrity sha512-7S29fCCgE1FNR9UGlXzrE5FKDRinhL48TMZXBb+xjbQZY+b0LwRTxDFyfWnwtTj6wWoz39kIegxD9+ORh2AJ4g==
 
 uri-js@^4.2.2:
   version "4.4.1"

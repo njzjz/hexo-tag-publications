@@ -5,7 +5,7 @@ const js = hexo.extend.helper.get('js').bind(hexo);
 const css = hexo.extend.helper.get('css').bind(hexo);
 const { name, version } = require('./package.json');
 const Injector = require("hexo-tag-injector");
-const { npm_url } = require("jsdelivr_url");
+const { npm_url } = require("unpkg_url");
 const { htmlTag } = require("hexo-util");
 
 const bibtex = fs.readFileSync(pathFn.join(hexo.source_dir, '_data/pub.bib'));

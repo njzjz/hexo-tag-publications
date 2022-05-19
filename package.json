@@ -22,7 +22,7 @@
     "hexo-fs": "^3.1.0",
     "hexo-tag-injector": "^0.1.0",
     "hexo-util": "^2.4.0",
-    "jsdelivr_url": "^0.0.1"
+    "unpkg_url": "^0.0.1"
   },
   "devDependencies": {
     "cssnano": "5.1.8",
