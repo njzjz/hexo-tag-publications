@@ -9,12 +9,12 @@ const fill_html = (pubs) => {
 }
 
 // global pubs
-pubs = get_bib(hexo);
+global_pubs = get_bib(hexo);
 
 // get pubs from global bib
 const get_pubs = (keys) => {
     return keys.map(key => {
-        return keypubs[key];
+        return global_pubs[key];
     })
 }
 
