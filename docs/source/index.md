@@ -35,3 +35,11 @@ It will be shown as
 {% publications %}
 Zeng_NatCommun_2020_v11_p5713
 {% endpublications %}
+
+You can also show all publications:
+
+```
+{% publications_from_bib pub.bib %}
+```
+
+{% publications_from_bib pub.bib %}
