@@ -24,7 +24,7 @@ const get_author = (hexo, authors) => {
             author = author.split(",").map(a => a.trim()).reverse().join(" ");
         }
         // it's you?
-        if (get_myself().map(mm => mm == author).some(Boolean)) {
+        if (get_myself(hexo).map(mm => mm == author).some(Boolean)) {
             author = htmlBold(author);
         }
         if (corresponding_author) {
