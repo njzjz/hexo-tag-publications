@@ -1,6 +1,7 @@
 const Injector = require("hexo-tag-injector");
 const { name, version } = require('../../package.json');
 const { npm_url } = require("unpkg_url");
+const { htmlTag } = require("./tag");
 
 const inject = (hexo, html) => {
     const js = hexo.extend.helper.get('js').bind(hexo);
