@@ -1,6 +1,6 @@
 
 const { htmlTag } = require("hexo-util");
-const { injector1, injector2 } = require("./inject");
+const { inject } = require("./inject");
 const { htmlBadge, htmlBold, htmlIcon, htmlLink, htmlNewline } = require("./tag");
 const { doi_prefix } = require("./doi");
 const { pub_icons } = require("./icons");
@@ -8,7 +8,7 @@ const { get_author } = require("./author");
 const { get_citation } = require("./citation");
 
 
-const pubs2html = (pubs) => injector1.mark(injector2.mark(htmlTag(
+const pubs2html = (hexo, pubs) => inject(hexo, htmlTag(
     "div",
     { class: "pub" },
     pubs.map((pub) => {

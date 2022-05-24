@@ -5,7 +5,7 @@ const { pubs2html } = require("./render/html");
 const fill_html = (pubs) => {
     // fill pubs
     fill(pubs);
-    return pubs2html(pubs);
+    return pubs2html(hexo, pubs);
 }
 
 // global pubs
@@ -21,7 +21,7 @@ const get_pubs = (keys) => {
 
 hexo.extend.tag.register('publications', function (args, content) {
     const pubs = get_pubs(content.split(',').map(pub => pub.trim()).filter(Boolean));
-    return pubs2html(pubs);
+    return fill_html(pubs);
 }, { ends: true });
 
 hexo.extend.tag.register('publications_from_bib', function (args, content) {
