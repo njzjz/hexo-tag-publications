@@ -2,6 +2,22 @@
 # yarn lockfile v1
 
 
+"@njzjz/hexo-sitemap@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@njzjz/hexo-sitemap/-/hexo-sitemap-0.0.3.tgz#97ce4373f068e0930d6cff749060e9be7e1cad92"
+  integrity sha512-ybLwe05f22Ctu9rtIFQTfx3wiX8+jyomZji24Ah2bbDSyLOG6k4vHXQMBs3Ktzzhq7JZ9wwGdHPNqMgeQf6/tw==
+  dependencies:
+    "@njzjz/sitemap" "^0.0.3"
+    hexo-util "^2.4.0"
+    unpkg_url "^0.0.1"
+
+"@njzjz/sitemap@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@njzjz/sitemap/-/sitemap-0.0.3.tgz#460abd89794c25801580dcc607392eb1c4069eca"
+  integrity sha512-8kXiIKexpAaE8THMi6221QNHQAWNByt+MuREp6y1EaadbIyK3GkKpFJU58r38gmNcsuzcm4M4rJb9uCyR4IKYw==
+  dependencies:
+    yaml "^1.10.0"
+
 "@tootallnate/once@2":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-2.0.0.tgz#f544a148d3ab35801c1f633a7441fd87c2e484bf"
@@ -1603,3 +1619,8 @@ xmlchars@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/xmlchars/-/xmlchars-2.2.0.tgz#060fe1bcb7f9c76fe2a17db86a9bc3ab894210cb"
   integrity sha512-JZnDKK8B0RCDw84FNdDAIpZK+JuJw+s7Lz8nksI7SIuU3UXJJslUthsi+uWBUYOwPFwW7W7PRLRfUKpxjtjFCw==
+
+yaml@^1.10.0:
+  version "1.10.2"
+  resolved "https://registry.yarnpkg.com/yaml/-/yaml-1.10.2.tgz#2301c5ffbf12b467de8da2333a459e29e7920e4b"
+  integrity sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==
