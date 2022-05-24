@@ -44,7 +44,7 @@ const pubs2html = (hexo, pubs) => inject(hexo, htmlTag(
         ) : ''
     }).join(''),
     false,
-)));
+));
 
 module.exports = {
     pubs2html,
