@@ -1,7 +1,7 @@
-const { fill_image } = require("./image.js");
+const { fill_images } = require("./image.js");
 
 const fill = (pubs) => {
-    fill_image(pubs);
+    fill_images(pubs);
 }
 
 module.exports = {
