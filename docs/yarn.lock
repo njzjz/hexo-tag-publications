@@ -130,6 +130,11 @@ basic-auth@~2.0.1:
   dependencies:
     safe-buffer "5.1.2"
 
+bibtex-parse@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/bibtex-parse/-/bibtex-parse-2.1.0.tgz#576d2c61a95b1612928d5e52c7dee64df13618e0"
+  integrity sha512-Ej1vvnhfEfegd2WAeQ1dWJ/NkS3Cb84zRPeMMCFDcOSvAJFAmhm/sAr2oLpK/KQITlnHk0g6+zBokGvLe9+NaQ==
+
 binary-extensions@^2.0.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-2.2.0.tgz#75f502eeaf9ffde42fc98829645be4ea76bd9e2d"
@@ -444,6 +449,11 @@ escape-html@~1.0.3:
   resolved "https://registry.yarnpkg.com/escape-html/-/escape-html-1.0.3.tgz#0258eae4d3d0c0974de1c169188ef0051d1d1988"
   integrity sha1-Aljq5NPQwJdN4cFpGI7wBR0dGYg=
 
+escape-string-regexp@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz#14ba83a5d373e3d311e5afca29cf5bfad965bf34"
+  integrity sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==
+
 escodegen@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/escodegen/-/escodegen-2.0.0.tgz#5e32b12833e8aa8fa35e1bf0befa89380484c7dd"
@@ -705,12 +715,28 @@ hexo-server@^3.0.0:
     picocolors "^1.0.0"
     serve-static "^1.14.1"
 
+hexo-tag-injector@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/hexo-tag-injector/-/hexo-tag-injector-0.1.0.tgz#ddf6ccc45450eb1e638b2ec4b359d7f05ee65b77"
+  integrity sha512-4LxRMtBGeFfTQtNt3lRomgvjIRVPj0DSb9oMnxJn7ltDjkH/pT46ZOkDfahn5GJdbYfcmfsH5uM0OY0yIxLzvw==
+  dependencies:
+    escape-string-regexp "^4.0.0"
+
+"hexo-tag-publications@file:./../":
+  version "0.2.6"
+  dependencies:
+    bibtex-parse "^2.1.0"
+    hexo-fs "^3.1.0"
+    hexo-tag-injector "^0.1.0"
+    hexo-util "^2.4.0"
+    unpkg_url "^0.0.1"
+
 hexo-theme-next@^8.11.1:
   version "8.11.1"
   resolved "https://registry.yarnpkg.com/hexo-theme-next/-/hexo-theme-next-8.11.1.tgz#f9f8ac8cf2f0c77f71ac4dc77fc07c47753cadec"
   integrity sha512-ZnpQU+Rj6piXAruC015fdGaWteN3hEUYoCUOCvTbo64iPq9EXfQia1kUdF8mwp+KibdxV8MdTVm/5kllcDf8eQ==
 
-hexo-util@^2.0.0, hexo-util@^2.5.0, hexo-util@^2.6.1:
+hexo-util@^2.0.0, hexo-util@^2.4.0, hexo-util@^2.5.0, hexo-util@^2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/hexo-util/-/hexo-util-2.6.1.tgz#19b79a1ec751a735ffe34766b65d8e2039c00519"
   integrity sha512-xj1jUrId2qTe8L/tRizWWRl+j7X1Zzh5rCVtffboOU0p/EfbPomxIxDvntTHT3fcqgvLHsncqJF9V5j7+buOqA==
@@ -1470,6 +1496,11 @@ unpipe@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/unpipe/-/unpipe-1.0.0.tgz#b2bf4ee8514aae6165b4817829d21b2ef49904ec"
   integrity sha1-sr9O6FFKrmFltIF4KdIbLvSZBOw=
+
+unpkg_url@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/unpkg_url/-/unpkg_url-0.0.1.tgz#24ee5c07ee3651bad7bad62ad14470cc50b05a77"
+  integrity sha512-7S29fCCgE1FNR9UGlXzrE5FKDRinhL48TMZXBb+xjbQZY+b0LwRTxDFyfWnwtTj6wWoz39kIegxD9+ORh2AJ4g==
 
 utils-merge@1.0.1:
   version "1.0.1"
