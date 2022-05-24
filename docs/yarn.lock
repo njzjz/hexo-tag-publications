@@ -722,7 +722,7 @@ hexo-tag-injector@^0.1.0:
   dependencies:
     escape-string-regexp "^4.0.0"
 
-"hexo-tag-publications@file:./../":
+"hexo-tag-publications@file:./../hexo-tag-publications":
   version "0.2.6"
   dependencies:
     bibtex-parse "^2.1.0"
