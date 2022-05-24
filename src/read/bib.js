@@ -10,14 +10,14 @@ const list2obj = (list) => {
     return obj;
 }
 
-const get_bib = () => {
+const get_bib = (hexo) => {
     /** returns list of object */
     const bibtex = fs.readFileSync(pathFn.join(hexo.source_dir, '_data/pub.bib'));
     const bibpubs = bibtexParse.entries(bibtex);
     return list2obj(bibpubs);
 }
 
-const get_local_bib = (bibfn) => {
+const get_local_bib = (hexo, bibfn) => {
     const bibtex_local = fs.readFileSync(pathFn.join(hexo.source_dir, '_data', bibfn));
     const bibpubs = bibtexParse.entries(bibtex_local);
     return list2obj(bibpubs)

@@ -9,7 +9,7 @@ const fill_html = (pubs) => {
 }
 
 // global pubs
-pubs = get_bib();
+pubs = get_bib(hexo);
 
 // get pubs from global bib
 const get_pubs = (keys) => {
@@ -25,6 +25,6 @@ hexo.extend.tag.register('publications', function (args, content) {
 }, { ends: true });
 
 hexo.extend.tag.register('publications_from_bib', function (args, content) {
-    const local_pubs = get_local_bib(args[0]);
+    const local_pubs = get_local_bib(hexo, args[0]);
     return fill_html(local_pubs);
 }, { ends: false });
