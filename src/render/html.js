@@ -24,7 +24,7 @@ const pubs2html = (hexo, pubs) => inject(hexo, htmlTag(
                 ) : '', // image
                 htmlNewline(pub.TITLE), // first line: title
                 htmlNewline([// second line
-                    get_author(pub.AUTHOR), // author
+                    get_author(hexo, pub.AUTHOR), // author
                     get_citation(pub), // citation
                     pub.DOI ? htmlBold("DOI: ") + htmlLink(doi_prefix + pub.DOI, pub.DOI) : null, //doi
                     htmlTag('span', { class: "pub-badges" },

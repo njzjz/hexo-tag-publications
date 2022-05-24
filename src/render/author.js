@@ -1,6 +1,6 @@
 const { htmlBold, htmlIcon } = require("./tag.js"); 
 
-const get_myself = () => {
+const get_myself = (hexo) => {
     var me = hexo.config.pub_author || hexo.config.author;
     if (typeof (me) == 'string') {
         me = [me];
@@ -8,7 +8,7 @@ const get_myself = () => {
     return me;
 }
 
-const get_author = (authors) => {
+const get_author = (hexo, authors) => {
     /**
      * **Jinzhe Zeng**, Tong Zhu[email];
      */
