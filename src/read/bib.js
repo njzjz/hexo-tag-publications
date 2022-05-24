@@ -12,7 +12,7 @@ const list2obj = (list) => {
 
 const get_bib = (hexo) => {
     /** returns list of object */
-    const bibtex = fs.readFileSync(pathFn.join(hexo.source_dir, '_data/pub.bib'));
+    const bibtex = fs.readFileSync(pathFn.join(hexo.source_dir, '_data', 'pub.bib'));
     const bibpubs = bibtexParse.entries(bibtex);
     return list2obj(bibpubs);
 }
@@ -20,7 +20,7 @@ const get_bib = (hexo) => {
 const get_local_bib = (hexo, bibfn) => {
     const bibtex_local = fs.readFileSync(pathFn.join(hexo.source_dir, '_data', bibfn));
     const bibpubs = bibtexParse.entries(bibtex_local);
-    return list2obj(bibpubs)
+    return bibpubs;
 }
 
 
