@@ -36,6 +36,10 @@ const pubs2html = (hexo, pubs) => inject(hexo, htmlTag(
                             return htmlTag('span', { class: "pub-icon" },
                                 htmlLink(item.prefix + pub[item.key], htmlIcon(item.icon)),
                                 false);
+                        } else if (item.fallback && pub[item.fallback.key]) {
+                            return htmlTag('span', { class: "pub-icon" },
+                                htmlLink(item.fallback.prefix + pub[item.fallback.key], htmlIcon(item.fallback.icon)),
+                                false);
                         }
                     }).filter(Boolean).join(''), false)
                 ].filter(Boolean).join('<br/>')), // remove empty
