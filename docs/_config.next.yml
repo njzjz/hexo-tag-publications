@@ -1,0 +1,7 @@
+minify: true
+vendors:
+  internal: cdnjs
+  plugins: cdnjs
+scheme: Gemini
+menu:
+  home: / || fa fa-home
