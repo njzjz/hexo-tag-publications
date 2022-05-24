@@ -16,7 +16,9 @@ yarn add hexo-tag-publications
 
 ## Usage
 
-Firstly, you need to create a bib file at `source/_data/pub.bib`. See [here](https://github.com/njzjz/njzjz.github.io/blob/6dcd278affcf61ed982dc01e0c3e76a98a668974/source/_data/pub.bib) for an example.
+Firstly, you need to create a bib file at `source/_data/pub.bib`:
+
+{% include_code pub.bib lang:bib pub.bib %}
 
 Then, you are able to add a publication list to any page or post, such as
 
@@ -26,7 +28,7 @@ Zeng_NatCommun_2020_v11_p5713
 {% endpublications %}
 ```
 
-where `Zeng_NatCommun_2020_v11_p5713` is the entry key in the [`pub.bib`](https://github.com/njzjz/njzjz.github.io/blob/6dcd278affcf61ed982dc01e0c3e76a98a668974/source/_data/pub.bib).
+where `Zeng_NatCommun_2020_v11_p5713` is the entry key in the `pub.bib`.
 
 It will be shown as 
 
