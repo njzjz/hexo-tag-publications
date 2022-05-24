@@ -739,7 +739,7 @@ hexo-tag-injector@^0.1.0:
     escape-string-regexp "^4.0.0"
 
 "hexo-tag-publications@file:./..":
-  version "0.2.6"
+  version "0.2.7"
   dependencies:
     bibtex-parse "^2.1.0"
     hexo-fs "^3.1.0"
