@@ -23,7 +23,7 @@
     "hexo-renderer-stylus": "2.1.0",
     "hexo-server": "3.0.0",
     "hexo-tag-publications": "file:./../",
-    "hexo-theme-next": "8.12.1"
+    "hexo-theme-next": "8.12.2"
   },
   "devDependencies": {
     "hexo-cli": "4.3.0"
