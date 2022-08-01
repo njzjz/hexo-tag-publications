@@ -739,10 +739,10 @@ hexo-tag-injector@^0.1.0:
     hexo-util "^2.4.0"
     unpkg_url "^0.0.1"
 
-hexo-theme-next@8.12.2:
-  version "8.12.2"
-  resolved "https://registry.yarnpkg.com/hexo-theme-next/-/hexo-theme-next-8.12.2.tgz#bebf6ca7d0725f11f07b6d672debcc4daf06f115"
-  integrity sha512-SeJjy9xxZWyAEyiBFToQGMNynmiz/aFkHEbfHDL+2RLoTIlqGrHiebSWR3mmcBzImHhdl9TH94MMHah+xwvePQ==
+hexo-theme-next@8.12.3:
+  version "8.12.3"
+  resolved "https://registry.yarnpkg.com/hexo-theme-next/-/hexo-theme-next-8.12.3.tgz#c3ab75b01599794154230ef428e844031a0e804a"
+  integrity sha512-KWH8jrrvU8/3cJRqbc/0nucEeM4LKuGydnPil/oOTEXmMq2EenyanpC1mxuhQCSoJHvzJChayzIjtmiNdPJndA==
 
 hexo-util@^2.0.0, hexo-util@^2.4.0, hexo-util@^2.5.0, hexo-util@^2.6.1:
   version "2.6.1"
