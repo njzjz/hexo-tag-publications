@@ -4,7 +4,8 @@ const get_citation = (pub) => {
     * journal, year, volume (issue), page.
     */
     const cit = [];
-    const journal = pub.JOURNAL || pub.JOURNALTITLE;
+    // booktitle for a chapter
+    const journal = pub.JOURNAL || pub.JOURNALTITLE || pub.BOOKTITLE;
     if (journal) {
         cit.push(journal);
     }
