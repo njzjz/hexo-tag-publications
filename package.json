@@ -21,7 +21,7 @@
     "bibtex-parse": "^2.1.0",
     "hexo-fs": "^4.0.0",
     "hexo-tag-injector": "^0.1.0",
-    "hexo-util": "^2.4.0",
+    "hexo-util": "^3.0.0",
     "unpkg_url": "^0.0.1"
   },
   "devDependencies": {
