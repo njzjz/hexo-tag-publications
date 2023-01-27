@@ -10,16 +10,22 @@ const list2obj = (list) => {
     return obj;
 }
 
+const replace_ensuremath = (str) => {
+    if (str) {
+        return str.replace(/\\ensuremath{([^}]+)}/g, '$$$1$$');
+    }
+}
+
 const get_bib = (hexo) => {
     /** returns list of object */
     const bibtex = fs.readFileSync(pathFn.join(hexo.source_dir, '_data', 'pub.bib'));
-    const bibpubs = bibtexParse.entries(bibtex);
+    const bibpubs = bibtexParse.entries(replace_ensuremath(bibtex));
     return list2obj(bibpubs);
 }
 
 const get_local_bib = (hexo, bibfn) => {
     const bibtex_local = fs.readFileSync(pathFn.join(hexo.source_dir, '_data', bibfn));
-    const bibpubs = bibtexParse.entries(bibtex_local);
+    const bibpubs = bibtexParse.entries(replace_ensuremath(bibtex_local));
     return bibpubs;
 }
 

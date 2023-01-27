@@ -2,6 +2,7 @@
 title: hexo-tag-publications
 sticky: 100
 date: 2022-05-24
+mathjax: true
 ---
 
 `hexo-tag-publications` creates a publication list. 
