@@ -5,3 +5,7 @@ vendors:
 scheme: Gemini
 menu:
   home: / || fa fa-home
+preconnect: true
+math:
+  mathjax:
+    enable: true
