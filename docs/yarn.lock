@@ -1051,9 +1051,9 @@ marked@^4.1.1:
   integrity sha512-PRsaiG84bK+AMvxziE/lCFss8juXjNaWzVbN5tXAm4XjeaS9NAHhop+PjQxz2A9h8Q4M/xGmzP8vqNwy6JeK0A==
 
 micro-memoize@^4.0.11:
-  version "4.0.14"
-  resolved "https://registry.yarnpkg.com/micro-memoize/-/micro-memoize-4.0.14.tgz#d1239ce2e5831125ac518509f5a23b54e7ca3e17"
-  integrity sha512-2tzWP1w2Hh+r7kCYa4f//jpBEA6dAueiuLco38NxfjF9Py3KCCI7wVOTdCvOhmTC043t+ulclVBdl3v+s+UJIQ==
+  version "4.0.15"
+  resolved "https://registry.yarnpkg.com/micro-memoize/-/micro-memoize-4.0.15.tgz#446a0a98b8d7050acf47fa0e8c88339064458c97"
+  integrity sha512-Mc0FlYAe6X1FWzunLztgHNEiyw7D68Jy0xm30IN4hTfVvIWlGtO5zmbgn3RxWz6bqD5f1iTK4S2EO4UHOuRSpw==
 
 micromatch@^4.0.4:
   version "4.0.5"
