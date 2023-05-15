@@ -26,6 +26,6 @@
     "hexo-theme-next": "8.16.0"
   },
   "devDependencies": {
-    "hexo-cli": "4.3.0"
+    "hexo-cli": "4.3.1"
   }
 }
