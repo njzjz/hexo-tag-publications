@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "cssnano": "5.1.15",
-    "postcss": "8.4.26",
+    "postcss": "8.4.27",
     "postcss-cli": "10.1.0",
     "webpack": "5.88.2",
     "webpack-cli": "5.1.4"
