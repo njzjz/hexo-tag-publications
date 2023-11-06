@@ -1,4 +1,4 @@
-const doi_prefix = require("./doi");
+const { doi_prefix } = require("./doi");
 
 const pub_icons = [
     // {key, prefix, icon}
