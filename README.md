@@ -1,6 +1,7 @@
 # hexo-tag-publications
 
-[![jsdelivr](https://data.jsdelivr.com/v1/package/npm/hexo-tag-publications/badge/all)](https://www.jsdelivr.com/package/npm/hexo-tag-publications)
+[![NPM version](https://img.shields.io/npm/v/hexo-tag-publications?color=red&logo=npm&style=flat-square)](https://www.npmjs.com/package/hexo-tag-publications)
+[![NPM Downloads](https://img.shields.io/npm/dy/hexo-tag-publications?logo=npm&style=flat-square)](https://www.npmjs.com/package/hexo-tag-publications)
 
 `hexo-tag-publications` creates a publication list. See [Here](https://njzjz.win/cv/) for an example.
 
