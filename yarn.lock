@@ -851,9 +851,9 @@ hexo-util@^2.7.0:
     strip-indent "^3.0.0"
 
 hexo-util@^3.0.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/hexo-util/-/hexo-util-3.1.0.tgz#0f2cfc907c91d3f9d69e119d7a521563617ceed2"
-  integrity sha512-LmztAhkJHQ59VHqz6AnvwEKiNA0pCBBI0qW08cCzjhnpGoqZ8tlGDwElzy7oTxCvMChkiqg5V8VflhdI8tHsGg==
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/hexo-util/-/hexo-util-3.2.0.tgz#42232f21387b990b6756e402a0f78c3dfe372aae"
+  integrity sha512-iM2eS8P88IUpcgiU2szx584bwhXzjzLLqED6WwDk55wYQZrQh/sni/UJwmoW4pxpgubbISIUPXr4LjwPyJuYzA==
   dependencies:
     camel-case "^4.1.2"
     cross-spawn "^7.0.3"
