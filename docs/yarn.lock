@@ -60,9 +60,9 @@ acorn-globals@^7.0.0:
     acorn-walk "^8.0.2"
 
 acorn-walk@^8.0.2:
-  version "8.3.1"
-  resolved "https://registry.yarnpkg.com/acorn-walk/-/acorn-walk-8.3.1.tgz#2f10f5b69329d90ae18c58bf1fa8fccd8b959a43"
-  integrity sha512-TgUZgYvqZprrl7YldZNoa9OciCAyZR+Ejm9eXzKCmjsF5IKp/wgQ7Z/ZpjpGTIUPwrHQIcYeI8qDh4PsEwxMbw==
+  version "8.3.2"
+  resolved "https://registry.yarnpkg.com/acorn-walk/-/acorn-walk-8.3.2.tgz#7703af9415f1b6db9315d6895503862e231d34aa"
+  integrity sha512-cjkyv4OtNCIeqhHrfS81QWXoCBPExR/J62oyEqepVw8WaQeSqpW2uhuLPh1m9eWhDuOo/jUXVTlifvesOWp/4A==
 
 acorn@^8.1.0, acorn@^8.8.1:
   version "8.11.3"
@@ -746,9 +746,9 @@ hexo-util@^2.4.0, hexo-util@^2.5.0, hexo-util@^2.7.0:
     strip-indent "^3.0.0"
 
 hexo-util@^3.0.0, hexo-util@^3.0.1, hexo-util@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/hexo-util/-/hexo-util-3.1.0.tgz#0f2cfc907c91d3f9d69e119d7a521563617ceed2"
-  integrity sha512-LmztAhkJHQ59VHqz6AnvwEKiNA0pCBBI0qW08cCzjhnpGoqZ8tlGDwElzy7oTxCvMChkiqg5V8VflhdI8tHsGg==
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/hexo-util/-/hexo-util-3.2.0.tgz#42232f21387b990b6756e402a0f78c3dfe372aae"
+  integrity sha512-iM2eS8P88IUpcgiU2szx584bwhXzjzLLqED6WwDk55wYQZrQh/sni/UJwmoW4pxpgubbISIUPXr4LjwPyJuYzA==
   dependencies:
     camel-case "^4.1.2"
     cross-spawn "^7.0.3"
@@ -1535,9 +1535,9 @@ w3c-xmlserializer@^4.0.0:
     xml-name-validator "^4.0.0"
 
 warehouse@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/warehouse/-/warehouse-5.0.0.tgz#b3892ad133a517d8d235fa6b9aea8752b8db34d6"
-  integrity sha512-3NDCqIF1r83ermIM6QffsJPn9sYoNN/aohb87edraeE2NF57yjSd651f+G7tqOgg4SZuD2DgGmwekc8fTIdi2g==
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/warehouse/-/warehouse-5.0.1.tgz#4062c9c5d6c84f245532923a23ecb4b5441024a5"
+  integrity sha512-5BQEQP56bPY+cqocTho4syazuGgSoyKd0y3PsS2j8tGN10HH+CEfJSIY+KUw9D0k4jaVEFMXLz0KqCiUzTYb8A==
   dependencies:
     bluebird "^3.7.2"
     cuid "^2.1.8"
