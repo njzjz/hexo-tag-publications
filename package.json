@@ -25,7 +25,7 @@
     "unpkg_url": "^0.0.1"
   },
   "devDependencies": {
-    "cssnano": "6.0.4",
+    "cssnano": "6.0.5",
     "postcss": "8.4.35",
     "postcss-cli": "11.0.0",
     "webpack": "5.90.3",
