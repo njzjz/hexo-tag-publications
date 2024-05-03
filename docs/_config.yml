@@ -26,7 +26,7 @@ public_dir: public
 tag_dir: tags
 archive_dir: archives
 category_dir: categories
-code_dir: _data
+code_dir: source/_data
 i18n_dir: :lang
 skip_render:
 
