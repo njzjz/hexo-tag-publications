@@ -7,8 +7,8 @@ const pub_icons = [
         fallback: { key: 'DOI', prefix: 'https://unpaywall.org/', icon: 'fas fa-file-pdf'},
     },
     { key: 'RESEARCHGATE', prefix: 'https://www.researchgate.net/publication/', icon: 'fab fa-researchgate' },
-    { key: 'GOOGLESCHOLAR', prefix: 'https://scholar.google.com/scholar?cluster=', icon: 'fab fa-google', 
-        fallback: { key: 'DOI', prefix: 'https://scholar.google.com/scholar?q=', icon: 'fab fa-google' },
+    { key: 'GOOGLESCHOLAR', prefix: 'https://scholar.google.com/scholar?cluster=', icon: 'fab fa-google-scholar', 
+        fallback: { key: 'DOI', prefix: 'https://scholar.google.com/scholar?q=', icon: 'fab fa-google-scholar' },
     },
     { key: 'GITHUB', prefix: 'https://github.com/', icon: 'fab fa-github' },
 ]
