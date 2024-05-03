@@ -5,7 +5,7 @@
 
 `hexo-tag-publications` creates a publication list. See [Here](https://njzjz.win/cv/) for an example.
 
-`hexo-tag-publications` needs Font Awesome to show icons.
+`hexo-tag-publications` needs Font Awesome >=6.5.0 to show icons.
 
 ## Installation
 
