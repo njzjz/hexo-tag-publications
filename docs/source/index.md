@@ -7,7 +7,7 @@ mathjax: true
 
 `hexo-tag-publications` creates a publication list. 
 
-`hexo-tag-publications` needs Font Awesome to show icons.
+`hexo-tag-publications` needs Font Awesome >=6.5.0 to show icons.
 
 ## Installation
 
