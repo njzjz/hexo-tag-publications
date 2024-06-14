@@ -12,7 +12,7 @@ const get_author = (hexo, authors) => {
     /**
      * **Jinzhe Zeng**, Tong Zhu[email];
      */
-    return authors && authors.replace(/(\r\n|\n|\r)/gm, ' ').split(' and ').map(author => {
+    return authors && authors.replace(/\s\s+/g, ' ').split(' and ').map(author => {
         author = author.trim()
         // Corresponding author
         corresponding_author = author.indexOf("*") > -1
