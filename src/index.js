@@ -14,7 +14,9 @@ global_pubs = get_bib(hexo);
 // get pubs from global bib
 const get_pubs = (keys) => {
     return keys.map(key => {
-        return global_pubs[key];
+        pub = global_pubs[key];
+        if (!pub) throw new Error(`BibTeX entry ${key} not found`);                                                            
+        return pub;
     })
 }
 
