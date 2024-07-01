@@ -17,9 +17,11 @@ yarn add hexo-tag-publications
 
 ## Usage
 
-Firstly, you need to create a bib file at `source/_data/pub.bib`:
+Firstly, you need to create a ${\mathrm{B{\scriptstyle{IB}} T_{\displaystyle E} X}}$ file at `source/_data/pub.bib`:
 
 {% include_code pub.bib lang:bib pub.bib %}
+
+You can use [wenxian](https://wenxian.njzjz.win) to generate ${\mathrm{B{\scriptstyle{IB}} T_{\displaystyle E} X}}$ files from given identifiers (DOI, PMID, or arXiv ID).
 
 Then, you are able to add a publication list to any page or post, such as
 
