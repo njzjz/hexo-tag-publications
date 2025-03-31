@@ -800,10 +800,10 @@ hexo-tag-injector@^0.1.0:
     hexo-util "^3.0.0"
     unpkg_url "^0.0.1"
 
-hexo-theme-next@8.22.0:
-  version "8.22.0"
-  resolved "https://registry.yarnpkg.com/hexo-theme-next/-/hexo-theme-next-8.22.0.tgz#8ba6b7c9d3abdf5715dfc6d5137422f4c5253efd"
-  integrity sha512-5ygjwme0LUlwmeuyHAll8977PAGbepUzit9N4cxQEW2jDMiEMQDWZj8GaTJ1dMzJ67RXQCIIVOwxlQ8jywYIMg==
+hexo-theme-next@8.23.0:
+  version "8.23.0"
+  resolved "https://registry.yarnpkg.com/hexo-theme-next/-/hexo-theme-next-8.23.0.tgz#6480a0a57683de0db3d2711e763c1a2e20207309"
+  integrity sha512-hHRuGRCTF1HyIjvucK3Ylxr2qYB2/bFXdD/IWyPtxcVvkLgn3jcwBq4Zw/ksd0qtKNnLnjrlwWSH9Dyy9Li5mA==
 
 hexo-util@^3.0.0, hexo-util@^3.0.1, hexo-util@^3.1.0, hexo-util@^3.3.0:
   version "3.3.0"
