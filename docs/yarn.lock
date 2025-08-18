@@ -774,10 +774,10 @@ hexo-tag-injector@^0.1.0:
     hexo-util "^3.0.0"
     unpkg_url "^0.0.1"
 
-hexo-theme-next@8.24.0:
-  version "8.24.0"
-  resolved "https://registry.yarnpkg.com/hexo-theme-next/-/hexo-theme-next-8.24.0.tgz#83a1518966c3977dfb436eb440c87824e9a1e7dd"
-  integrity sha512-GMjNgoygyHWlPSRGZVjsjhPIEXmtWl0OWWmXxNbZdsf/f4fx+wS3OOxecFfsVJe9FVEv0Uu1hOvxPSgOjdDsSQ==
+hexo-theme-next@8.24.1:
+  version "8.24.1"
+  resolved "https://registry.yarnpkg.com/hexo-theme-next/-/hexo-theme-next-8.24.1.tgz#37aa3080a1788724ecfdd7e70b0347e3ea727347"
+  integrity sha512-DTa+umV5XTDa8XEtiLkaKDzgHqlnrj5HXi+6auI690TJdbIULm9sgaUQFkriDr2jeeGQDUV4ptsvgTTRaZjiGw==
 
 hexo-util@^3.0.0, hexo-util@^3.0.1, hexo-util@^3.1.0, hexo-util@^3.3.0:
   version "3.3.0"
