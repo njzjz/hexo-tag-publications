@@ -629,7 +629,7 @@ hasown@^2.0.2:
   dependencies:
     function-bind "^1.1.2"
 
-hexo-cli@4.3.2, hexo-cli@^4.3.0:
+hexo-cli@4.3.2, hexo-cli@^4.3.2:
   version "4.3.2"
   resolved "https://registry.yarnpkg.com/hexo-cli/-/hexo-cli-4.3.2.tgz#7e7d02da137d9fa461a4356964793c56e92b29e6"
   integrity sha512-druJeBgLpG9ncDS5AhBHdAXk0G4CFj8Qes09pApyZ6bR+nJW1JYiDMuilhudaKDdq+1l49jWXVTidkcb7p0Jbw==
@@ -652,7 +652,7 @@ hexo-front-matter@^4.2.1:
   dependencies:
     js-yaml "^4.1.0"
 
-hexo-fs@^4.1.1:
+hexo-fs@^4.1.1, hexo-fs@^4.1.3:
   version "4.1.3"
   resolved "https://registry.yarnpkg.com/hexo-fs/-/hexo-fs-4.1.3.tgz#c64c66e230dad4ec08ca21244327aa0aba69218a"
   integrity sha512-Q92zQ5PlVDouvSWFLXQoFSTLIUIODikUJs2BfAXQglyOEjN1dOQn1Z5Nimk/7GHof17R5h/uObCQLnZAjzI2tg==
@@ -792,20 +792,20 @@ hexo-util@^3.0.0, hexo-util@^3.0.1, hexo-util@^3.1.0, hexo-util@^3.3.0:
     prismjs "^1.29.0"
     strip-indent "^3.0.0"
 
-hexo@7.1.1:
-  version "7.1.1"
-  resolved "https://registry.yarnpkg.com/hexo/-/hexo-7.1.1.tgz#1686deb4ccfeeda950270e09292c26888538cf67"
-  integrity sha512-u6aJXG1npYkZJLl7QEOeTdm9hOwxfsLmFp4qAQVF0OAuNaikrKORjgNsjPmrWwI/tIObwjVJnEUJnV7S+NnUlw==
+hexo@7.2.0:
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/hexo/-/hexo-7.2.0.tgz#0c2b0eeb3f16c557638b6dbd5956a425460d7d0f"
+  integrity sha512-RYIzl7jfG0i2jH/k5IZg4C1anyHfmKHNUsBKIn9LU0V3iQ0WQrwuOLFDJwaZDenqmzHYJhAVCGAkrBDfF/IlVg==
   dependencies:
     abbrev "^2.0.0"
     archy "^1.0.0"
     bluebird "^3.7.2"
-    hexo-cli "^4.3.0"
+    hexo-cli "^4.3.2"
     hexo-front-matter "^4.2.1"
-    hexo-fs "^4.1.1"
+    hexo-fs "^4.1.3"
     hexo-i18n "^2.0.0"
     hexo-log "^4.0.1"
-    hexo-util "^3.0.1"
+    hexo-util "^3.3.0"
     js-yaml "^4.1.0"
     js-yaml-js-types "^1.0.0"
     micromatch "^4.0.4"
@@ -820,7 +820,7 @@ hexo@7.1.1:
     text-table "^0.2.0"
     tildify "^2.0.0"
     titlecase "^1.1.3"
-    warehouse "^5.0.0"
+    warehouse "^5.0.1"
 
 highlight.js@^11.6.0:
   version "11.11.1"
@@ -1562,7 +1562,7 @@ w3c-xmlserializer@^4.0.0:
   dependencies:
     xml-name-validator "^4.0.0"
 
-warehouse@^5.0.0:
+warehouse@^5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/warehouse/-/warehouse-5.0.1.tgz#4062c9c5d6c84f245532923a23ecb4b5441024a5"
   integrity sha512-5BQEQP56bPY+cqocTho4syazuGgSoyKd0y3PsS2j8tGN10HH+CEfJSIY+KUw9D0k4jaVEFMXLz0KqCiUzTYb8A==
