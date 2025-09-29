@@ -1028,9 +1028,9 @@ math-intrinsics@^1.1.0:
   integrity sha512-/IXtbwEk5HTPyEwyKX6hGkYXxM9nbj64B+ilVJnC/R6B0pH5G4V3b0pVbL7DBj4tkhBAppbQUlf6F6Xl9LHu1g==
 
 micro-memoize@^4.1.2:
-  version "4.1.3"
-  resolved "https://registry.yarnpkg.com/micro-memoize/-/micro-memoize-4.1.3.tgz#17d5df0702acf575503cbf09df90fe691c12825f"
-  integrity sha512-DzRMi8smUZXT7rCGikRwldEh6eO6qzKiPPopcr1+2EY3AYKpy5fu159PKWwIS9A6IWnrvPKDMcuFtyrroZa8Bw==
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/micro-memoize/-/micro-memoize-4.2.0.tgz#76266c42910da4bd6e62c400c1b6204fc9fe6b78"
+  integrity sha512-dRxIsNh0XosO9sd3aASUabKOzG9dloLO41g74XUGThpHBoGm1ttakPT5in14CuW/EDedkniaShFHbymmmKGOQA==
 
 micromatch@^4.0.4:
   version "4.0.8"
