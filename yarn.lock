@@ -741,9 +741,9 @@ hasown@^2.0.2:
     function-bind "^1.1.2"
 
 hexo-fs@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/hexo-fs/-/hexo-fs-5.0.0.tgz#c6999cc823dfa3b9dd1d6254b5d777f8d24e765d"
-  integrity sha512-oBkg1QgXyb4JxipaH+yCV/7E7XOUASTK6x1pocWvLw6U2mB6VfLENgYg61ft9Qn6JCiKSzs7FU4vyTUy6gIPvQ==
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/hexo-fs/-/hexo-fs-5.0.1.tgz#b5d78d3df3386faadeec364d73e1fed224a4e57a"
+  integrity sha512-Zm4m21coQA7TtL9JL0oNZF+ypY/HbqwVdaqGqoKD+GEV7HH2Y1YObNBgl1o/lV1tzStC8f15AoRcHdS2jiWp0w==
   dependencies:
     bluebird "^3.7.2"
     chokidar "^4.0.3"
